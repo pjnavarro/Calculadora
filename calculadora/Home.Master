@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="calculadora.Home" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Calculadora</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="padding-top: 65px;">
+    <nav class="justify-content-center navbar navbar-light fixed-top" style="background-color: #1DB9B9">
+        <h1 class="navbar-brand text-white">CALCULADORA</h1>
+    </nav>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <footer>
+        <div class="fixed-bottom justify-content-center" style="background-color: darkcyan">
+            <h2 class=" text-center">Programación V. Profesor: Emmanuel Sanatori. NSLP.</h2>
+        </div>
+    </footer>
+</body>
+<script src="jqueryNumeric / jquery.numeric.js/ jquery-3.5.1.min.map "> </script>
+</html>
