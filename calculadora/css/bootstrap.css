@@ -6881,7 +6881,10 @@ button.bg-dark:focus {
 }
 
 .border-danger {
-  border-color: #dc3545 !important;
+  border-color: #dc3545;
+    top: 0px;
+    left: 0px;
+    height: 511px;
 }
 
 .border-light {

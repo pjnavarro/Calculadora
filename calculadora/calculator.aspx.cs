@@ -13,11 +13,13 @@ namespace calculadora
 {
     public partial class calculator : System.Web.UI.Page
     {
-              
+
+        Calculos cal= new Calculos();
+        double numero1 = 0;
+        double numero2 = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-
         }
 
         protected void btnBorrar_Click(object sender, EventArgs e)
@@ -29,21 +31,21 @@ namespace calculadora
 
         protected void btnResta_Click(object sender, EventArgs e)
         {
+
             if (txt1.Text == "" || txt2.Text == "")
             {
                 lbl.Text = "Debe ingresar los números";
                 lbl.Visible = true;
+                lbl.ForeColor = System.Drawing.Color.Red;
             }
             else
-                {
-                double a = Convert.ToDouble(txt1.Text);
-                double b = Convert.ToDouble(txt2.Text);
-                double c;
-
-                c = a - b;
-
-            txt3.Text = c.ToString();
-            lbl.Visible = false;
+            {
+                numero1 = Convert.ToDouble(txt1.Text);
+                numero2 = Convert.ToDouble(txt2.Text);
+                txt3.Text = cal.resta(numero1, numero2).ToString();
+                lbl.Text = "El total es:";
+                lbl.Visible = true;
+                lbl.ForeColor = System.Drawing.Color.Blue;
             }
         }
 
@@ -53,19 +55,17 @@ namespace calculadora
             {
                 lbl.Text = "Debe ingresar los números";
                 lbl.Visible = true;
+                lbl.ForeColor = System.Drawing.Color.Red;
             }
             else
             {
-                double a = Convert.ToDouble(txt1.Text);
-                double b = Convert.ToDouble(txt2.Text);
-                double c;
-
-                c = a + b;
-
-                txt3.Text = c.ToString();
-                lbl.Visible = false;
+                numero1 = Convert.ToDouble(txt1.Text);
+                numero2 = Convert.ToDouble(txt2.Text);
+                txt3.Text = cal.suma(numero1, numero2).ToString();
+                lbl.Text = "El total es:";
+                lbl.Visible = true;
+                lbl.ForeColor = System.Drawing.Color.Black;
             }
-           
         }
 
         protected void btnMul_Click(object sender, EventArgs e)
@@ -74,17 +74,16 @@ namespace calculadora
             {
                 lbl.Text = "Debe ingresar los números";
                 lbl.Visible = true;
+                lbl.ForeColor = System.Drawing.Color.Red;
             }
             else
             {
-                double a = Convert.ToDouble(txt1.Text);
-                double b = Convert.ToDouble(txt2.Text);
-                double c;
-
-                c = a * b;
-
-                txt3.Text = c.ToString();
-                lbl.Visible = false;
+                numero1 = Convert.ToDouble(txt1.Text);
+                numero2 = Convert.ToDouble(txt2.Text);
+                txt3.Text = cal.mul(numero1, numero2).ToString();
+                lbl.Text = "El total es:";
+                lbl.Visible = true;
+                lbl.ForeColor = System.Drawing.Color.Green;
             }
         }
 
@@ -94,17 +93,28 @@ namespace calculadora
             {
                 lbl.Text = "Debe ingresar los números";
                 lbl.Visible = true;
+                lbl.ForeColor = System.Drawing.Color.Red;
             }
             else
             {
-                double a = Convert.ToDouble(txt1.Text);
-                double b = Convert.ToDouble(txt2.Text);
-                double c;
-
-                c = a / b;
-
-                txt3.Text = c.ToString();
-                lbl.Visible = false;
+                if (txt2.Text == "0")
+                {
+                    lbl.Text = "No se puede dividir por cero, ingrese otro número";
+                    lbl.Visible = true;
+                    lbl.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    if ( txt2.Text != "0")
+                    {
+                        numero1 = Convert.ToDouble(txt1.Text);
+                        numero2 = Convert.ToDouble(txt2.Text);
+                        txt3.Text = cal.div(numero1, numero2).ToString();
+                        lbl.Text = "El total es:";
+                        lbl.Visible = true;
+                        lbl.ForeColor = System.Drawing.Color.Yellow;
+                    }
+                }
             }
         }
     }

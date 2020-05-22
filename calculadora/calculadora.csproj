@@ -92,6 +92,7 @@
     <Compile Include="calculator.aspx.designer.cs">
       <DependentUpon>calculator.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Calculos.cs" />
     <Compile Include="Home.Master.cs">
       <DependentUpon>Home.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
