@@ -135,7 +135,7 @@ namespace calculadora
                         lbl.Text = "El total es:";
                         lbl.Visible = true;
                         lbl.ForeColor = System.Drawing.Color.Yellow;
-                        Session["divicion"] = txt3.Text;
+                        Session["div"] = txt3.Text;
 
                     }
                 }

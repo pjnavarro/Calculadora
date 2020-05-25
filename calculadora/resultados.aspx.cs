@@ -14,7 +14,7 @@ namespace calculadora
             txtSuma.Text = Convert.ToString(Session["suma"]);
             txtResta.Text = Convert.ToString(Session["resta"]);
             txtMul.Text = Convert.ToString(Session["mul"]);
-            txtDiv.Text = Convert.ToString(Session["divicion"]);
+            txtDiv.Text = Convert.ToString(Session["div"]);
 
             if (Session["Login"] == null)
             {
