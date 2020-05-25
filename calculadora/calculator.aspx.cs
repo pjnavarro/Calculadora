@@ -14,12 +14,23 @@ namespace calculadora
     public partial class calculator : System.Web.UI.Page
     {
 
-        Calculos cal= new Calculos();
+        Calculos cal = new Calculos();
         double numero1 = 0;
         double numero2 = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Login"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
+            else
+            {
+                lblLogeado.Text = " Usuario logeado: " + Convert.ToString(Session["Login"])
+                                                + " Hora: " + DateTime.Now.ToString();
+                lblLogeado.Visible = true;
+                lblLogeado.ForeColor = System.Drawing.Color.Blue;
+            }
         }
 
         protected void btnBorrar_Click(object sender, EventArgs e)
@@ -27,6 +38,7 @@ namespace calculadora
             txt1.Text = "";
             txt2.Text = "";
             txt3.Text = "";
+            lbl.Visible = false;
         }
 
         protected void btnResta_Click(object sender, EventArgs e)
@@ -105,7 +117,7 @@ namespace calculadora
                 }
                 else
                 {
-                    if ( txt2.Text != "0")
+                    if (txt2.Text != "0")
                     {
                         numero1 = Convert.ToDouble(txt1.Text);
                         numero2 = Convert.ToDouble(txt2.Text);
@@ -117,5 +129,14 @@ namespace calculadora
                 }
             }
         }
-    }
+
+        protected void btnUsuario_Click(object sender, EventArgs e)
+        {
+            
+          
+
+        }
+    } 
 }
+
+
