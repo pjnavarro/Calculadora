@@ -27,9 +27,9 @@ namespace calculadora
             else
             {
                 lblLogeado.Text = " Usuario logeado: " + Convert.ToString(Session["Login"])
-                                                + " Hora: " + DateTime.Now.ToString();
+                                                + ", Hora: " + DateTime.Now.ToString();
                 lblLogeado.Visible = true;
-                lblLogeado.ForeColor = System.Drawing.Color.Blue;
+                lblLogeado.ForeColor = System.Drawing.Color.LightSkyBlue;
             }
         }
 
@@ -128,13 +128,6 @@ namespace calculadora
                     }
                 }
             }
-        }
-
-        protected void btnUsuario_Click(object sender, EventArgs e)
-        {
-            
-          
-
         }
     } 
 }

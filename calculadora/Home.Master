@@ -10,7 +10,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body style="padding-top: 65px;">
+<body style="padding-top: 56px;">
     <nav class="justify-content-center navbar navbar-light fixed-top" style="background-color: #1DB9B9">
         <h1 class="navbar-brand text-white">CALCULADORA</h1>
     </nav>
@@ -21,7 +21,7 @@
         </div>
     </form>
     <footer>
-        <div class="fixed-bottom justify-content-center" style="background-color: darkcyan">
+        <div class="justify-content-center" style="background-color: darkcyan">
             <h2 class=" text-center">Programación V. Profesor: Emmanuel Sanatori. NSLP.</h2>
         </div>
     </footer>
