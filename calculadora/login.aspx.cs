@@ -20,6 +20,7 @@ namespace calculadora
             {
                 Session["Login"] = txtUser.Text;
                 Response.Redirect("calculator.aspx");
+                Response.Redirect("resultados.aspx");
             }
             else
             {

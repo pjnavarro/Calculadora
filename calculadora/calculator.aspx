@@ -22,7 +22,8 @@
                 <br />
                 <div>
                     <div class="justify-content-center btn-toolbar " role="toolbar" aria-label="Toolbar with button groups">
-                        <asp:Button class="btn btn-outline-danger" ID="btnBorrar" runat="server" Text=" Borrar " Width="180px" OnClick="btnBorrar_Click" />
+                        <asp:Button class="btn btn-dark" ID="btnBorrar" runat="server" Text=" Borrar " Width="180px" OnClick="btnBorrar_Click" />
+                        <asp:Button class="btn btn-primary" ID="btnResultados" runat="server" Text="Resultados" Width="180px" OnClick="btnResultados_Click" />
                     </div>
                     <br />
                     <div class="justify-content-center btn-toolbar " role="toolbar" aria-label="Toolbar with button groups">

@@ -13,6 +13,7 @@ namespace calculadora
 {
     public partial class calculator : System.Web.UI.Page
     {
+        double resultados=0;
 
         Calculos cal = new Calculos();
         double numero1 = 0;
@@ -20,6 +21,7 @@ namespace calculadora
 
         protected void Page_Load(object sender, EventArgs e)
         {
+                    
             if (Session["Login"] == null)
             {
                 Response.Redirect("login.aspx");
@@ -27,7 +29,7 @@ namespace calculadora
             else
             {
                 lblLogeado.Text = " Usuario logeado: " + Convert.ToString(Session["Login"])
-                                                + ", Hora: " + DateTime.Now.ToString();
+                                  + ", Hora: " + DateTime.Now.ToString();
                 lblLogeado.Visible = true;
                 lblLogeado.ForeColor = System.Drawing.Color.LightSkyBlue;
             }
@@ -52,12 +54,15 @@ namespace calculadora
             }
             else
             {
+               
                 numero1 = Convert.ToDouble(txt1.Text);
                 numero2 = Convert.ToDouble(txt2.Text);
                 txt3.Text = cal.resta(numero1, numero2).ToString();
                 lbl.Text = "El total es:";
                 lbl.Visible = true;
                 lbl.ForeColor = System.Drawing.Color.Blue;
+                Session["resta"] = txt3.Text;
+
             }
         }
 
@@ -71,12 +76,15 @@ namespace calculadora
             }
             else
             {
+               
                 numero1 = Convert.ToDouble(txt1.Text);
                 numero2 = Convert.ToDouble(txt2.Text);
                 txt3.Text = cal.suma(numero1, numero2).ToString();
                 lbl.Text = "El total es:";
                 lbl.Visible = true;
                 lbl.ForeColor = System.Drawing.Color.Black;
+                Session["suma"] = txt3.Text;
+
             }
         }
 
@@ -96,6 +104,8 @@ namespace calculadora
                 lbl.Text = "El total es:";
                 lbl.Visible = true;
                 lbl.ForeColor = System.Drawing.Color.Green;
+                Session["mul"] = txt3.Text;
+
             }
         }
 
@@ -125,9 +135,18 @@ namespace calculadora
                         lbl.Text = "El total es:";
                         lbl.Visible = true;
                         lbl.ForeColor = System.Drawing.Color.Yellow;
+                        Session["divicion"] = txt3.Text;
+
                     }
                 }
             }
+        }
+
+        protected void btnResultados_Click(object sender, EventArgs e)
+        {
+          
+            Response.Redirect("resultados.aspx");
+           
         }
     } 
 }

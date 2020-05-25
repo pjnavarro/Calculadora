@@ -79,11 +79,13 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\Captura.JPG" />
     <Content Include="css\login.jpg" />
+    <Content Include="css\resultados.jpg" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="login.aspx" />
+    <Content Include="resultados.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +112,13 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="resultados.aspx.cs">
+      <DependentUpon>resultados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="resultados.aspx.designer.cs">
+      <DependentUpon>resultados.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\bootstrap-grid.css.map" />
