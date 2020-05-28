@@ -11,7 +11,20 @@ namespace calculadora
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Login"] == null)
+            {
+                btnCerrar.Visible = false;
+            }
+            else
+            {
+                btnCerrar.Visible = true;
+            }
+        }
 
+        protected void btnCerrar_Click(object sender, EventArgs e)
+        {            
+                Session.Remove("Login");
+                Response.Redirect("login.aspx");           
         }
     }
 }
