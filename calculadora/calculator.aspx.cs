@@ -13,8 +13,6 @@ namespace calculadora
 {
     public partial class calculator : System.Web.UI.Page
     {
-        double resultados=0;
-
         Calculos cal = new Calculos();
         double numero1 = 0;
         double numero2 = 0;
@@ -54,15 +52,14 @@ namespace calculadora
             }
             else
             {
-               
                 numero1 = Convert.ToDouble(txt1.Text);
                 numero2 = Convert.ToDouble(txt2.Text);
-                txt3.Text = cal.resta(numero1, numero2).ToString();
+                var clResta = cal.resta(numero1, numero2).ToString();
+                txt3.Text = clResta;
                 lbl.Text = "El total es:";
                 lbl.Visible = true;
                 lbl.ForeColor = System.Drawing.Color.Blue;
-                Session["resta"] = txt3.Text;
-
+                Session.Add("resta", clResta.ToString() + ", " + Session["resta"]);
             }
         }
 
@@ -76,15 +73,14 @@ namespace calculadora
             }
             else
             {
-               
                 numero1 = Convert.ToDouble(txt1.Text);
                 numero2 = Convert.ToDouble(txt2.Text);
-                txt3.Text = cal.suma(numero1, numero2).ToString();
+                var clSuma = cal.suma(numero1, numero2).ToString();
+                txt3.Text = clSuma;
                 lbl.Text = "El total es:";
                 lbl.Visible = true;
                 lbl.ForeColor = System.Drawing.Color.Black;
-                Session["suma"] = txt3.Text;
-
+                Session.Add("suma", clSuma.ToString() + ", " + Session["suma"]);
             }
         }
 
@@ -100,12 +96,12 @@ namespace calculadora
             {
                 numero1 = Convert.ToDouble(txt1.Text);
                 numero2 = Convert.ToDouble(txt2.Text);
-                txt3.Text = cal.mul(numero1, numero2).ToString();
+                var clMul = cal.mul(numero1, numero2).ToString();
+                txt3.Text = clMul;
                 lbl.Text = "El total es:";
                 lbl.Visible = true;
                 lbl.ForeColor = System.Drawing.Color.Green;
-                Session["mul"] = txt3.Text;
-
+                Session.Add("mul", clMul.ToString() + ", " + Session["mul"]);
             }
         }
 
@@ -131,12 +127,12 @@ namespace calculadora
                     {
                         numero1 = Convert.ToDouble(txt1.Text);
                         numero2 = Convert.ToDouble(txt2.Text);
-                        txt3.Text = cal.div(numero1, numero2).ToString();
+                        var clDiv = cal.div(numero1, numero2).ToString();
+                        txt3.Text = clDiv;
                         lbl.Text = "El total es:";
                         lbl.Visible = true;
                         lbl.ForeColor = System.Drawing.Color.Yellow;
-                        Session["div"] = txt3.Text;
-
+                        Session.Add("div", clDiv.ToString() + ", " + Session["div"]);
                     }
                 }
             }
@@ -144,9 +140,7 @@ namespace calculadora
 
         protected void btnResultados_Click(object sender, EventArgs e)
         {
-          
             Response.Redirect("resultados.aspx");
-           
         }
     } 
 }

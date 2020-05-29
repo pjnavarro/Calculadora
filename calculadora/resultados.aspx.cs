@@ -33,5 +33,17 @@ namespace calculadora
         {
             Response.Redirect("calculator.aspx");
         }
+
+        protected void btnBorrsr_Click(object sender, EventArgs e)
+        {
+            txtSuma.Text = string.Empty;
+            Session["suma"] = string.Empty;
+            txtResta.Text = string.Empty;
+            Session["resta"] = string.Empty;
+            txtMul.Text = string.Empty;
+            Session["mul"] = string.Empty;
+            txtDiv.Text = string.Empty;
+            Session["div"] = string.Empty;
+        }
     }
 }
